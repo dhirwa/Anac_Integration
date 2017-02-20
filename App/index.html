@@ -1,32 +1,670 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="AnacApp">
    <head>
-      <title>Anac</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="css/bootstrap-min.css">
-      <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/style.css" type="text/css">
-      <link href="css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
-      <link rel="stylesheet" media="screen and (min-width:300px)" href="css/style-app.css" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="Assets/css/bootstrap-min.css">
+      <!--<link rel="stylesheet" href="Assets/css/style.css" type="text/css">-->
+      <link href="Assets/css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="Assets/css/bootstrap-toggle.css" type="text/css">
+      <link rel="shortcut icon" href="Assets/img/cartix-favicon.png" type="image/x-icon">
+      <link rel="stylesheet" href="Assets/css/duration.css">
+      <link rel="//fonts.googleapis.com/css?family=Open+Sans">
+      <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+              integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+              crossorigin="anonymous"></script>
+      <script src="Assets/js/bootstrap.min.js"></script>
+      <script src="Assets/js/duration.js"></script>
+      <!--<script src="Assets/js/style.js"></script>-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+      <script src="Assets/js/bootstrap-multiselect.js" type="text/javascript"></script>
+      <script src="Assets/js/controller.js"></script>
+
+
+      <style>
+      .anac {
+  font-size: 25px;
+  font-weight: bold;
+  color: #757575;
+  position: relative;
+  top:11px;
+}
+
+.anac2 {
+  font-size: 25px;
+  font-weight: bold;
+  color: #757575;
+  position: relative;
+  top:11px;
+  left: 12px;
+}
+.profile-name {
+  margin-top: 16px;
+}
+.cartix-icon_ {
+  float: left;
+  margin-top: 20px;
+  height: 50px;
+}
+.text-center {
+  font-size: 19px;
+  color: #757575;
+}
+.text-1 {
+  margin-top: 29px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #212121;
+}
+.text-1-table {
+  position: relative;
+  top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #212121;
+}
+.text-2 {
+  font-weight: normal;
+  color: #757575;
+}
+.anac-logo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.text-3 {
+  font-weight: bold;
+  color: #9e9e9e;
+  margin-top: 19px;
+}
+.text-6 {
+  font-weight: bold;
+  color: #212121;
+}
+.label {
+  display: inline-block;
+}
+.checkbox-right {
+  float: right;
+}
+.checkbox-left {
+  float: left;
+}
+dd label input {
+  margin-right: 100px;
+}
+.small-text {
+  font-size: 12px;
+}
+.style-button {
+  height: 45px;
+  width: 85px;
+  margin-bottom: 50px;
+  border-radius: 19px;
+  border: 1px solid #03a9f4;
+  color: #03a9f4;
+}
+.style-button3 {
+  height: 45px;
+  width: 85px;
+  border-radius: 19px;
+  border: 1px solid #03a9f4;
+  color: #03a9f4;
+  margin-bottom: 30px;
+  margin-top: 12px;
+}
+.style-button-admin {
+  height: 40px;
+  width: 85px;
+  margin-bottom: 40px;
+  border-radius: 19px;
+  border: 1px solid #03a9f4;
+  color: #03a9f4;
+}
+.style-button-admin4 {
+  height: 40px;
+  width: 85px;
+  border-radius: 19px;
+  border: 1px solid #03a9f4;
+  color: #03a9f4;
+  margin-top: 14px;
+  margin-bottom: 40px;
+}
+.style-button-admin5 {
+  height: 40px;
+  width: 85px;
+  border-radius: 19px;
+  border: 1px solid #03a9f4;
+  color: #03a9f4;
+  margin-bottom: 40px;
+}
+.style-button-connect {
+  float: right;
+  margin-top: 12px;
+  margin-right: 12px;
+}
+.anac-box {
+  background-color: #fafafa;
+  height: 100%;
+
+}
+
+.anac-img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 95px;
+  /*margin-bottom: 100%;*/
+}
+
+.anac-img-admin {
+  display: block;
+  margin: 0 auto;
+  margin-top: 95px;
+  margin-bottom: 100%;
+}
+.demande-envoyer2 {
+  margin-bottom: 100%;
+}
+.saved {
+position: fixed;
+width: 50%;
+display: none;
+}
+
+/*formmulaire2*/
+.nom-complet {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.nom-complet2 {
+  font-weight: bold;
+}
+.small-text-name {
+  font-weight: normal;
+  font-size: 13px;
+}
+.small-text-name2 {
+  font-size: 15px;
+}
+.formulaire2 {
+  display: none;
+}
+.formulaire3 {
+  display: none;
+}
+.formulaire4 {
+  display: none;
+}
+.formulaire5 {
+  display: none;
+}
+.formulaire6 {
+  display: none;
+}
+.formulaire7 {
+  display: none;
+}
+.formulaire8 {
+  display: none;
+}
+.formulaire9 {
+  display: none;
+}
+.formulaire11 {
+  display: none;
+}
+.formulaire12 {
+  display: none;
+}
+.form-gender {
+  margin-top: 15px;
+}
+.form-gender-admin {
+  margin-top: 15px;
+}
+.text-4 {
+  color: #9e9e9e;
+  font-weight: bold;
+}
+.text-5 {
+
+  font-size: 15px;
+}
+.text-6 {
+  font-size: 15px;
+}
+/*Checkbox toggle*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e53935;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #00c853;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #00c853;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.btn-group {
+  border-radius: 30px;
+}
+/*.anac-box{
+position: fixed;
+}*/
+
+button {
+  outline: none !important;
+}
+.text-margin {
+  margin-top: 12px;
+}
+.btn-3 {
+  margin-top: 25px;
+}
+.table {
+  margin-top: 20px;
+}
+.btn-succes {
+  float: right;
+  margin-bottom: 20px;
+}
+.btn span.glyphicon {
+  opacity: 0;
+}
+.btn.active span.glyphicon {
+  opacity: 1;
+}
+#option2 {
+  /*display: none;*/
+}
+#table-display {
+  display: none;
+
+}
+#successfull-saved-admin{
+display: none;
+}
+
+/* Base for label styling */
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 19px;
+  cursor: pointer;
+}
+/* checkbox aspect */
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -8px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #bbb;
+  background: #42a5f5;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+}
+.small-text{
+font-size: 13px;
+}
+/* checked mark aspect */
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: -8px;
+  left: 0px;
+  font-size: 19px;
+  line-height: 0.8;
+  color: #fff;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 1px dotted blue;
+}
+/* hover style just for information */
+
+label:hover:before {
+  border: 1px solid #4778d9!important;
+}
+/*Sign in*/
+
+.logo-center img {
+  /*max-width: 110px;*/
+
+  height: 90px;
+  margin-top: 20px;
+}
+h1 {
+  text-align: center;
+  margin-top: 150px;
+}
+.forgot-password {
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  color: #616161;
+  margin-top: 25px;
+}
+.btn-success {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #009710!important;
+  border-radius: 20px;
+  width: 90px;
+  height: 37px;
+
+}
+.btn-pwd:hover {
+  color: white;
+}
+.forgot-password_ {
+  font-weight: bold;
+  color: #212121;
+}
+.forgot-password_:hover {
+  color: #757575;
+}
+.login {
+  color: #424242;
+}
+a:hover {
+  text-decoration: none;
+}
+/*Form style*/
+
+.text {
+  font-size: 14.40px;
+  border: 1px solid #212121;
+  background-color: #212121;
+  !important;
+  color: white;
+  opacity: 0.60;
+}
+.form-control-no-border:focus {
+  border-color: #212121;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn:focus,
+.btn:active {
+  outline: none !important;
+}
+.footer-contain {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.footer-text {
+  text-align: center;
+  font-size: 11px;
+  color: #BDBDBD;
+  padding: 1rem;
+}
+.cartix-footer {
+  height: 28px;
+}
+
+ /*success saved*/
+
+.success-img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 220px;
+}
+.demande-envoyer {
+  text-align: center;
+  color: #424242;
+}
+.demande-envoyer2 {
+  text-align: center;
+  color: #757575;
+}
+.saved {
+  /*display: none;
+position:fixed;
+right:0;
+float:right;*/
+}
+/*admin*/
+
+.anac-background-admin {
+  display: none;
+}
+.anac-box-admin {
+  background-color: #fafafa;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+
+}
+.anac-background-admin {
+  background-color: #fafafa;
+  height: 100%;
+}
+.admin {
+  width: 40%;
+}
+.profile-name {} .comment {
+  width: 50%;
+}
+.text_ {
+  margin-top: 5px;
+}
+/*date picker*/
+
+.bdp-input {
+  border-radius: 2px;
+  padding: 0 3px;
+  border: 1px solid rgba(34, 36, 38, .15);
+  cursor: pointer;
+}
+.bdp-input.disabled {
+  color: #AAA;
+  cursor: default;
+}
+.bdp-popover {
+  min-width: 60px;
+}
+.bdp-popover input {
+  display: inline;
+  /*margin-bottom: 3px;*/
+
+  width: 60px;
+}
+.bdp-block {
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  padding: 5px 3px;
+}
+.bdp-label {
+  font-size: 70%;
+}
+.form-exam {
+  margin-bottom: -20px;
+}
+.small-text_ {
+  font-size: 12px;
+}
+.small-text-under {
+  font-size: 12px;
+  font-weight: normal;
+}
+.small-text__ {
+  font-size: 14px;
+}
+.horizontal {
+  margin-bottom: 20px;
+}
+.display {
+  margin-top: 5px;
+}
+.anac-box-admin {
+  /*position: fixed;
+  right: 0;
+  float: right;*/
+}
+#envoyer-admin {
+  display: none;
+}
+.table-applicant{
+margin: 12px;
+position: relative;
+bottom: 15px;
+}
+.table-responsive{
+display: block;
+margin: 0 auto;
+}
+.table-margin{
+margin: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.applicant-button3{
+/*position:relative;
+ left: 0%;
+ margin-top:50%;*/
+}
+#date-license-A{
+display: none;
+}
+#date-license-b{
+display: none;
+}
+#date-license-c{
+display: none;
+}
+#date-license-d{
+display: none;
+}
+#date-license-e{
+display: none;
+}
+#date-license-f{
+display: none;
+}
+.title{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #757575;
+}
+.title2{
+  text-align: center;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom:10px;
+  color: #757575;
+}
+.style{
+  font-weight: bold;
+}
+      </style>
    </head>
    <body>
-        <div class="container-fluid text-center">
-            <img class="cartix-icon_" src="img/letter-logo1.png">
-
-      </div>
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-       <img src="img/logo.png" class="anac-logo">
-      <p class="text-center">Bienvenue sur la platform web de registration de l’ANAC. Si vous etes un administrateur <a href="sign-in.html">connecter vous</a>, si
-          vous etes un(e) applicant(e) <a href="applicant-form.html">cliquer ici</a> pour faire parvenir vos informations,
-          Merci.</p>
-       </div>
-      <div class="col-md-3"></div>
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/style.js"></script>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-      <script src="js/bootstrap-multiselect.js" type="text/javascript"></script>
+      <main ng-view></main>
    </body>
+
 </html>
