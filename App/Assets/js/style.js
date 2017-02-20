@@ -30,12 +30,12 @@
     $("#sauvegarder").click(function(e){
          event.preventDefault();
         $(".anac-background,.profile-name").hide();
-         $("#table-display").show();
+         $("#table-applicant").show();
     });
     $("#envoyer").click(function(e){
          event.preventDefault();
-        $(".table-responsive").hide();
-         $("#successfull-saved").show();
+        $("#table-applicant").hide();
+         $("#successfull").show();
     });
 
  });
@@ -74,11 +74,11 @@
         $(".anac-background").hide();
          $("#table-display").show();
     });
-    $("#envoyer").click(function(e){
-         event.preventDefault();
-        $(".table-responsive").hide();
-         $("#successfull-saved").show();
-    });
+    // $("#envoyer").click(function(e){
+    //      event.preventDefault();
+    //     $(".table-responsive").hide();
+    //      $("#successfull-saved").show();
+    // });
  });
 
 
@@ -122,12 +122,12 @@
           $("#button-admin2-preview").click(function(e){
              event.preventDefault();
             $("#formulaire-admin2").hide();
-             $("#formulaire-admin1").show();
+            $("#formulaire-admin1").show();
           });
           $("#button-admin3-preview").click(function(e){
              event.preventDefault();
             $("#formulaire-admin3").hide();
-             $("#formulaire-admin2").show();
+            $("#formulaire-admin2").show();
           });
           $("#button-admin4-preview").click(function(e){
              event.preventDefault();
