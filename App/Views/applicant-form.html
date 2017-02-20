@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <title>Anac-applicant</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link href="bootstrap3/css/font-awesome.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/style.css" type="text/css">
-      <link rel="stylesheet" href="css/bootstrap-toggle.css" type="text/css">
-      <link href="css/bootstrap-multiselect.css" rel="stylesheet" type="text/css"/>
-      <link rel="shortcut icon" href="img/cartix-favicon.png" type="image/x-icon">
-      <link rel="stylesheet" media="screen and (min-width:300px)" href="css/style-app.css" type="text/css">
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-      <script src="angular-cdn-src.min.js"></script>
-   </head>
-   <body ng-app="applicantApp" ng-controller="applicantCtrl">
-      <div class="container-fluid">
+      <div class="container-fluid" ng-controller="applicantCtrl">
          <div class="row">
             <div class="col-md-6">
                <section id="formulaire1" class="formulaire1">
@@ -29,7 +12,7 @@
                         <input type="checkbox" ng-model="appl.initial" id="test001"/>
                         <label for="test001"></label> Delivrance Initiale /<span class="small-text"> Original issuance</span>
                         <input type="checkbox" ng-model="appl.renewal" id="test002"/><label for="test002"></label> Renouvellement /<span class="small-text">Renewal</span>
-                        <input type="checkbox" ng-model="appl.conversion" ng-model="appl.reissue" id="test003"/><label for="test003"></label> Conversion /<span class="small-text">Conversion</span>
+                        <input type="checkbox" ng-model="appl.conversion" id="test003"/><label for="test003"></label> Conversion /<span class="small-text">Conversion</span>
                         <br><br>
                         <input type="checkbox" ng-model="appl.reissue" id="test004"/><label for="test004"></label> Reemission /<span class="small-text">Reissue</span>
                         <input type="checkbox" ng-model="appl.validation" id="test005"/><label for="test005"></label> Validation /<span class="small-text">validation</span>
@@ -52,11 +35,10 @@
                            </div>
                         </div>
                         <div class="col-md-4">
-                           <div class="form-group has-error has-feedback">
+                           <div class="form-group">
                               <label class=" control-label" for="inputError"></label>
                               <div class="col-sm-12">
                                  <input type="text" class="form-control" id="inputError" ng-model="appl.lastname" placeholder="prenom..">
-                                 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
                               </div>
                            </div>
                         </div>
@@ -81,7 +63,7 @@
                         <div class="form-group">
                      <form class="form-horizontal">
                      <div class="col-md-4">
-                     <input class="form-control" type="date" name="bday" ng-model="appl.birthdate" min="2000-01-02">
+                     <input class="form-control" type="date" name="bday" ng-model="appl.birthdate" min="1940-01-02">
                      </form>
                      </div>
                      </div>
@@ -99,8 +81,8 @@
                      </div>
                   </form>
                   <div class="applicant-button1">
-                     <button type="button" class="btn btn-default style-button">Precedent</button>
-                     <button type="button" class="btn btn-default style-button" id="button1">Suivant</button>
+                     <button type="button" class="btn btn-default style-button" >Precedent</button>
+                     <button type="button" class="btn btn-default style-button" ng-click="tonext1()" id="button1">Suivant</button>
                   </div>
                </section>
                <section id="formulaire2" class="formulaire2">
@@ -220,8 +202,8 @@
                      </div>
                   </form>
                   <div class="applicant-button2">
-                     <button type="button" class="btn btn-default style-button" id="button2-preview">Precedent</button>
-                     <button type="button" class="btn btn-default style-button" id="button2-next">Suivant</button>
+                     <button type="button" class="btn btn-default style-button" id="button2-preview" ng-click="precedent2()">Precedent</button>
+                     <button type="button" class="btn btn-default style-button" id="button2-next" ng-click="tonext2()">Suivant</button>
                   </div>
                </section>
                <section id="formulaire3" class="formulaire3">
@@ -237,7 +219,7 @@
                         <div class="col-sm-3">
                            <div class="form-group ">
                               <label>Cheveux / Hair</label>
-                              <input type="text" class="form-control" id="inputError" ng-model="hair" placeholder="cheveux....">
+                              <input type="text" class="form-control" id="inputError" ng-model="appl.hair" placeholder="cheveux....">
                            </div>
                         </div>
                         <div class="col-sm-3">
@@ -327,8 +309,8 @@
                      </div>
                   </div>
                   <div class="applicant-button3">
-                     <button type="button" class="btn btn-default style-button3" id="button3-preview">Precedent</button>
-                     <button type="button" class="btn btn-default style-button3" id="button3-next">Suivant</button>
+                     <button type="button" class="btn btn-default style-button3" id="button3-preview" ng-click="precedent3()">Precedent</button>
+                     <button type="button" class="btn btn-default style-button3" id="button3-next" ng-click="tonext3()">Suivant</button>
                   </div>
                </section>
                <section id="formulaire4" class="formulaire4">
@@ -497,7 +479,7 @@
                      </div>
                      </form>
                   </div>
-                  <p class="text-6">D. Detenteur d’une licence etrangere/ Holder of a foreign License <input type="checkbox" id="test4"/>
+                  <p class="text-6">D. Detenteur d’une licence etrangere/ Holder of a foreign License <input type="checkbox" ng-model="appl.detenteur" id="test4"/>
                      <label for="test4"></label>
                   </p>
                   <br>
@@ -579,7 +561,7 @@
                         </div>
                      </form>
                   </div>
-                  <p class="text-6"><input type="checkbox" ng-model="appl.10hours" id="test010" />
+                  <p class="text-6"><input type="checkbox" ng-model="appl.attesthours" id="test010" />
                      <label for="test010"></label> J’atteste avoir effectue au moins 10 heures de vol en qualite de commandant de bord  <br>
                      sur les avions militaires de types suivants:<br>
                      <span class="small-text-name">Has flown at least 10 hours as pilot in command during the past 12 months<br> in the following military aircraft:</span>
@@ -604,191 +586,490 @@
                      formulaire sont exactes<br><span style="font-size:13px;color:#757575">I certify that the statements made by me on this application are true</span>
                   </p>
                   <div class="applicant-button-save">
-                     <button type="button" class="btn btn-primary" id="sauvegarder">Sauvegarder</button>
-                     <button type="button" class="btn btn-danger">Annuler</button><br>
-                     <button type="button" class="btn btn-default style-button3 btn-3" id="button6-preview">Precedent</button>
+                     <button type="button" class="btn btn-primary" id="sauvegarder" ng-click="sauvegarder()">Sauvegarder</button>
+                     <button type="button" class="btn btn-danger" id="annuler">Annuler</button><br>
+                     <button type="button" class="btn btn-default style-button3 btn-3" id="button6-preview" ng-click="precedent4()">Precedent</button>
                   </div>
                </section>
             </div>
             <div class="col-md-6 anac-box">
                <div class="row">
-                  <div class="anac-background">
+                  <div class="anac-header">
                      <span class="anac2">ANAC</span>
-                     <a href="sign-in.html"><button type="button" class="btn btn-default style-button-connect">Se Connecter</button></a>
-                     <img class="anac-img" src="img/watermark.png">
+                     <a href="#/signin"><button type="button" class="btn btn-default style-button-connect">Se Connecter</button></a>
+                   </div>
+                     <div class="anac-background">
+                     <img class="anac-img" src="Assets/img/watermark.png">
+                   </div>
+
+                   <div id="table-display">
+                  <div class="table-margin" id="table-applicant">
+                    <div class="table-container">
+                       <h4 class="title">Formulaire de demande afficher :</h4>
+                      <table class="table">
+                         <thead>
+                            <tr>
+                               <th></th>
+                               <th>No</th>
+                               <th>Question</th>
+                               <th></th>
+                               <th></th>
+                               <th>Réponse</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                           <tr>
+                              <td></td>
+                              <td></td>
+                              <td>Demande de:</td>
+                              <td></td>
+                              <td></td>
+                              <td>Delivrance Initiale</td>
+
+                           </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Licence ATE:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.license}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Noms:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.firstname +" "+ appl.lastname}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Numero Passeport :</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.passport}}</td>
+                            </tr>
+
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Date de naissance:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.birthdate}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Addresse permanente:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.address}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Taille:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.height}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Ville et etat</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.city +", "+appl.province}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Pays:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.country}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Code Postal:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.postal}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Lieu de naissance:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.birthplace}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Nationalite:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.nationality}}</td>
+                            </tr>
+
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Numero de Telephone:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.telephone}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Courriel:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.email}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Poids:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.weight}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Taille:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.height}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Gender:</td>
+                               <td></td>
+                               <td></td>
+                               <td>Male</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Hair:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.email}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Eyes:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.eyes}}</td>
+                            </tr>
+                            <tr class="active">
+                              <td></td>
+                              <td></td>
+                              <td>Type of Licence:</td>
+                              <td></td>
+                              <td></td>
+                              <td>{{appl.current_holding}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Ever suspended:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.suspended}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Type of Licence:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.licensetype}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>License Number:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.licensenumber}}</td>
+                            </tr>
+                             <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>Date de delivrance:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.issuedate}}</td>
+                            </tr>
+                            <tr>
+                               <td></td>
+                               <td></td>
+                               <td>Francais:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.french}}</td>
+                            </tr>
+                            <tr class="active">
+                               <td></td>
+                               <td></td>
+                               <td>English:</td>
+                               <td></td>
+                               <td></td>
+                               <td>{{appl.english}}</td>
+                            </tr>
+                         </tbody>
+                      </table>
                   </div>
-                  <div id="table-display">
-                     <span class="anac2">ANAC</span>
-                     <a href="sign-in.html"><button type="button" class="btn btn-default style-button-connect">Se Connecter</button></a>
-                     <div class="table-container">
-                        <table class="table">
-                           <thead>
-                              <tr>
-                                 <th></th>
-                                 <th>No</th>
-                                 <th>Question</th>
-                                 <th></th>
-                                 <th></th>
-                                 <th>Réponse</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                              <tr class="active">
-                                 <td></td>
-                                 <td></td>
-                                 <td>Licence ATE:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>oui</td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Noms:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>{{appl.fullname()}}</td>
-                              </tr>
-                              <tr class="active">
-                                 <td></td>
-                                 <td></td>
-                                 <td>Numero Passeport :</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>BE 167480</td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Taille:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>200</td>
-                              </tr>
-                              <tr class="active">
-                                 <td></td>
-                                 <td></td>
-                                 <td>Date de naissance:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>18/7/1950</td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Addresse permanente:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Route da-Cotonou</td>
-                              </tr>
-                              <tr class="active">
-                                 <td></td>
-                                 <td></td>
-                                 <td>Ville:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>cotonou</td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Nationalite:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Beninoise</td>
-                              </tr>
-                              <tr class="active">
-                                 <td></td>
-                                 <td></td>
-                                 <td>Etat:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Cotonou</td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Pays postal:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Benin</td>
-                              </tr>
-                              <tr class="active">
-                                 <td></td>
-                                 <td></td>
-                                 <td>Code Postal:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>01BP 305</td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Lieu de naissance:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Dakar</td>
-                              </tr>
-                              <tr class="active">
-                                 <td></td>
-                                 <td></td>
-                                 <td>Numero de Telephone:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>+229 9547</td>
-                              </tr>
-                              <tr>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Courriel:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>test@anac.b</td>
-                              </tr>
-                              <tr class="active">
-                                 <td></td>
-                                 <td></td>
-                                 <td>Demande de:</td>
-                                 <td></td>
-                                 <td></td>
-                                 <td>Delivrance Initiale</td>
-                              </tr>
-                           </tbody>
+
+                  <h4 class="title2">Demande de License afficher :</h4>
+                  <div class="table-container">
+                    <table class="table">
+                       <thead>
+                          <tr>
+                             <th></th>
+                             <th>No</th>
+                             <th>Question</th>
+                             <th></th>
+                             <th></th>
+                             <th>Réponse</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="style">A. Test de Connaissance :</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.testtheorique}}</td>
+                         </tr>
+
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Canditaure a un test de connaissance:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.testapplied}}</td>
+                         </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Test de connaissance theorique:</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.testreussi}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Date de delivrance:</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.dateiss}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td class="style">B. Test pratique:</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.skilltest}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Aeronef a utiliser :</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.aircraftused}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Nombre d’heures de vol</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.timeflied}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Total des Heures de vol en Commandant</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.timeincommand}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td class="style">C. Eleve sorti(e) d’un organisme :</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.organisme}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Nom de l’organisme et addresse</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.orgname}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Location de l'institution(Cite, Etat)</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.orgcity+", "+appl.orgprovince}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Pays</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.orgcountry}}</td>
+                          </tr>
+
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Numero d’agreement de l'organisme</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.certificateno}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Intitule de la formation</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.course}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Date de la fin de formation</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.graduatedate}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td class="style">D. Detenteur d’une licence :</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.detenteur}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Pays</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.detenteurpays}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Type de license</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.detenteurtype}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Numero de license</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.detenteurlicno}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Qualification</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.qualif}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td class="style">E. Competences Militaire :</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.military}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Service</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.service}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Date de qualification:</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.qualifdate}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Echelon ou grade</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.grade}}</td>
+                          </tr>
+                          <tr class="active">
+                             <td></td>
+                             <td></td>
+                             <td>Attestation d'au moins 10 heures de vol:</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.attesthours}}</td>
+                          </tr>
+                          <tr>
+                             <td></td>
+                             <td></td>
+                             <td>Attestation du Candidat</td>
+                             <td></td>
+                             <td></td>
+                             <td>{{appl.attestation}}</td>
+                          </tbody>
                         </table>
-                        <button type="button" class="btn btn-success btn-succes" id="envoyer">Envoyer</button>
-                     </div>
-                     <div class="saved" id="successfull-saved">
-                        <img src="img/success.png"class="success-img">
+                      <button type="button" class="btn btn-success btn-succes" id="envoyer" ng-click=envoyer()>Envoyer</button>
+                      </div>
+                    </div>
+                  </div>
+                     <div class="saved" id="successfull">
+                        <img src="Assets/img/success.png"class="success-img">
                         <h3 class="demande-envoyer">Votre demande à été reçue</h3>
                         <p class="demande-envoyer2">Merci d’avoir envoyer vos informations. Un message de confirmation vous<br>
-                           parviendra dans les 24 heures à suivre.<img src="img/emoji.png">
+                           parviendra dans les 24 heures à suivre.<img src="Assets/img/emoji.png">
                         </p>
                      </div>
                   </div>
-               </div>
+             </div>
             </div>
          </div>
-      </div>
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/style.js"></script>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-      <script src="js/bootstrap-multiselect.js" type="text/javascript"></script>
-      <script>
-          var mainApp = angular.module("applicantApp", []);
-
-         mainApp.controller('applicantCtrl', function($scope) {
-            $scope.appl = {
-               firstname: "Mahesh",
-               lastname: "Parashar",
-
-               fullName: function() {
-                  var studentObject;
-                  applicantObject = $scope.appl;
-                  return applicantObject.firstname + " " + applicantObject.lastname;
-               }
-            };
-         });
-      </script>
-   </body>
-</html>
