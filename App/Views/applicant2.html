@@ -1,0 +1,1005 @@
+<div class="container-fluid" ng-controller="ApplyCtrl">
+   <div class="row">
+      <div class="col-md-6">
+         <section id="formulaire1" class="formulaire1">
+            <div class="demande-de">
+               <p class="text-1">REFERENCE DU FORMULAIRE : R2-OPS-FOR-02<br>DECLARATION DE PRE-EVALUATION DU POSTULANT A UN PEA <br><span class="text-2">(A remplir par l’Opérateur Aérien ou l’Organisme de Maintenance)
+                  </span>
+               </p>
+              </div>
+              <div class="sectionA">
+               <p class="text-3">Section 1A : A remplir par tous les postulants</p>
+               <!-- <p class="text-3">1.</p> -->
+               <form class="form-horizontal form-gender">
+                 <div class="row">
+                    <div class="col-md-4">
+                       <div class="form-group">
+                          <label class="control-label"></label>
+                          <div class="col-sm-12">
+                              <label> 1. Raison Social:</label>
+                             <input class="form-control" id="focusedInput" type="text" ng-model="appl.raison_social" placeholder="text...">
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-md-4">
+                       <div class="form-group">
+                          <label class=" control-label" for="inputError"></label>
+                          <div class="col-sm-12">
+                                <label>Addresse social:</label>
+                             <input type="text" class="form-control" id="inputError" ng-model="appl.addresse_sociale" placeholder="text...">
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-md-4">
+                       <div class="form-group">
+                          <label class=" control-label" for="inputError"></label>
+                          <div class="col-sm-12">
+                            <label>Numero du telephone:</label>
+                             <input type="text" class="form-control" id="inputError" ng-model="appl.adres_telephone" placeholder="text...">
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+               </form>
+
+               <form class="form-horizontal form-gender">
+                 <div class="row">
+                    <div class="col-md-4">
+                       <div class="form-group">
+                          <label class="control-label"></label>
+                          <div class="col-sm-12">
+                              <label>addresse electronique:</label>
+                             <input class="form-control" id="focusedInput" type="email" ng-model="appl.email" placeholder="text...">
+                          </div>
+                       </div>
+                    </div>
+                    <div class="col-md-4">
+                       <div class="form-group">
+                          <label class=" control-label" for="inputError"></label>
+                          <div class="col-sm-12">
+                                <label>Autre appelation:</label>
+                             <input type="text" class="form-control" id="inputError" ng-model="appl.autre_appelation" placeholder="text...">
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+               </form>
+
+              <!-- <p class="text-3">2.</p> -->
+              <form class="form-horizontal form-gender">
+                <div class="row">
+                   <div class="col-sm-4">
+                      <div class="form-group">
+                         <label class="control-label"></label>
+                         <div class="col-sm-12">
+                             <label> 2. Addresse Administratif:</label>
+                            <input class="form-control" id="focusedInput" type="text" ng-model="appl.address_admin" placeholder="text...">
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-5">
+                      <div class="form-group">
+                         <label class=" control-label" for="inputError"></label>
+                         <div class="col-sm-12">
+                               <label>Etablissements secondaires:</label>
+                            <input type="text" class="form-control" id="inputError" ng-model="appl.etabl_secondaire" placeholder="text...">
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-3">
+                      <div class="form-group">
+                         <label class=" control-label" for="inputError"></label>
+                         <div class="col-sm-12">
+                           <label>Type d’exploitation:</label>
+                            <input type="text" class="form-control" id="inputError" ng-model="appl.type_exploit" placeholder="text...">
+                         </div>
+                      </div>
+                   </div>
+                </div>
+              </form>
+                <!-- <p class="text-3">3.</p> -->
+              <form class="form-horizontal form-gender">
+                <div class="row">
+                   <div class="col-md-4">
+                      <div class="form-group">
+                         <label class="control-label"></label>
+                         <div class="col-sm-12">
+                           <div class="date-naissance">
+                              <p><label>3. Date de Commencement</label>
+                                 <br><span class="small-text">Start date (Month/Day/Year)<span>
+                              </p>
+                              <form id="dateRangeForm" method="post" class="form-horizontal">
+                                 <div class="form-group">
+                              <form class="form-horizontal">
+                              <div class="col-md-12">
+                              <input class="form-control" type="date" name="bday" ng-model="appl.date_commencement" min="2000-01-02">
+                              </form>
+                              </div>
+                              </div>
+                              </form>
+                           </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+              </form>
+
+              <!-- <p class="text-3">4.</p> -->
+              <form class="form-horizontal form-gender">
+                <p class="text-bold">4. Indicatif demandé pour l’exploitant, dans l’ordre de préférence:</p>
+                <div class="row">
+                   <div class="col-md-4">
+                      <div class="form-group">
+                         <label class="control-label"></label>
+                         <div class="col-sm-12">
+                            <input class="form-control" id="focusedInput" type="text" ng-model="appl.indicatif1" placeholder="text...">
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-4">
+                      <div class="form-group">
+                         <label class=" control-label" for="inputError"></label>
+                         <div class="col-sm-12">
+                            <input type="text" class="form-control" id="inputError" ng-model="appl.indicatif2" placeholder="text...">
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-4">
+                      <div class="form-group">
+                         <label class=" control-label" for="inputError"></label>
+                         <div class="col-sm-12">
+                            <input type="text" class="form-control" id="inputError" ng-model="appl.indicatif3" placeholder="text...">
+                         </div>
+                      </div>
+                   </div>
+                </div>
+              </form>
+
+
+
+    <div class="panel-body">
+      <div class="row">
+    <p class="text-bold">5. Personnel de Direction et principaux cadres y compris le Dirigeant Responsable:</p>
+    <div class="col-sm-4 nopadding">
+    <div class="form-group">
+      <input type="text" class="form-control" id="Schoolname" name="Schoolname[]" value="" ng-model="appl.names" placeholder="Nom et Prenoms">
+  </div>
+  </div>
+  <div class="col-sm-4 nopadding">
+    <div class="form-group">
+      <input type="text" class="form-control" id="Major" name="Major[]" value="" ng-model="appl.titre" placeholder="Titre">
+    </div>
+  </div>
+  <div class="col-sm-4 nopadding">
+    <div class="form-group">
+      <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="appl.telephone" placeholder="Telephone">
+  </div>
+  </div>
+  <div class="col-sm-4 nopadding">
+    <div class="form-group">
+      <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="appl.telecopieur" placeholder="Telecopieur">
+    </div>
+  </div>
+  <div class="col-sm-4 nopadding">
+    <div class="form-group">
+      <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="appl.email_person" placeholder="Adresse Electronique">
+    </div>
+  </div>
+
+  <div class="col-sm-3 nopadding">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <button class="btn btn-success btn-plus" type="button" id="ajouter"><i class="fa fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="education_fields">
+
+      </div>
+  <div class="clear"></div>
+
+</div>
+<div class="panel-footer"><small>
+Appuyez sur <span class="glyphicon glyphicon-plus gs"></span> pour ajouter un autre champ de formulaire :)</small>, <small>appuyez sur  <span class="glyphicon glyphicon-minus gs"></span> pour supprimer le champ de formulaire :)</small></div>
+</div>
+</div>
+<br>
+<div class="applicant-button1">
+ <button type="button" class="btn btn-default style-button">Precedent</button>
+ <button type="button" class="btn btn-default style-button" ng-click=tonext1() id="button1">Suivant</button>
+</div>
+</section>
+         <section id="formulaire2" class="formulaire2">
+
+          <p class="text-3">Section 1B : Propositions concernant la maintenance (A remplir par tous les postulants, selon qu’il convient)</p>
+          <label>6.L’exploitant a l’intention de: </label>
+          <p class="small-text-name2"> <input type="checkbox" ng-model="appl.realiser_maintenance" id="test1"/>
+             <label for="test1"></label> Réaliser sa maintenance en qualité d’AMO (remplir les rubriques 7 et 8)
+          </p>
+          <div class="section-b" style="display:none">
+
+            <!--A REVOIR -->
+
+          <p class="text-bold"> 7.Types d’exploitation proposés par l’exploitant (Cocher autant de cases que nécessaire):</p>
+          <p class="small-text-name2"> <input type="checkbox" id="test5" />
+             <label for="test5"></label> Passagers et marchandises
+          </p>
+          <p class="small-text-name2"> <input type="checkbox" id="test6" />
+             <label for="test6"></label> Marchandises seulement
+          </p>
+          <p class="small-text-name2"> <input type="checkbox" id="test7" />
+             <label for="test7"></label> Vols réguliers
+          </p>
+          <p class="small-text-name2"> <input type="checkbox" id="test8" />
+             <label for="test8"></label> Vols affrétés
+          </p>
+          <p class="text-bold"> 8.Qualifications proposées de l’AMO:</p>
+          <div class="row">
+            <div class="col-md-3">
+              <p class="small-text-name2"> <input type="checkbox" id="test9" />
+                 <label for="test9"></label> Cellules
+              </p>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <p class="small-text-name2"> <input type="checkbox" id="test10" />
+                 <label for="test10"></label> Ordinateurs
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p class="small-text-name2"> <input type="checkbox" id="test11" />
+                 <label for="test11"></label> Moteurs
+              </p>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <p class="small-text-name2"> <input type="checkbox" id="test12" />
+                 <label for="test12"></label> Instruments
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p class="small-text-name2"> <input type="checkbox" id="test13" />
+                 <label for="test13"></label> Hélices
+              </p>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <p class="small-text-name2"> <input type="checkbox" id="test14" />
+                 <label for="test14"></label> Accessoires
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p class="small-text-name2"> <input type="checkbox" id="test15" />
+                 <label for="test15"></label> Avionique
+              </p>
+            </div>
+            <div class="col-md-4 col-md-offset-1">
+              <p class="small-text-name2"> <input type="checkbox" id="test16" />
+                 <label for="test16"></label> Services spécialisés
+              </p>
+            </div>
+          </div>
+         </div>
+
+          <p class="small-text-name2"> <input type="checkbox" ng-model="appl.soustraiter_maintenace" id="test2" />
+             <label for="test2"></label> Sous-traiter la maintenance et les inspections des aéronefs et du matériel  connexe   (remplir les rubriques 7 et 11)
+          </p>
+
+          <div class="section-b-second" style="display:none">
+          <label> 7.Types d’exploitation proposés par l’exploitant (Cocher autant de cases que nécessaire):</label>
+          <p class="small-text-name2"> <input type="checkbox" id="test17" />
+             <label for="test17"></label> Passagers et marchandises
+          </p>
+          <p class="small-text-name2"> <input type="checkbox" id="test18" />
+             <label for="test18"></label> Marchandises seulement
+          </p>
+          <p class="small-text-name2"> <input type="checkbox" id="test19" />
+             <label for="test19"></label> Vols réguliers
+          </p>
+          <p class="small-text-name2"> <input type="checkbox" id="test20" />
+             <label for="test20"></label> Vols affrétés
+          </p>
+           <form class="form-horizontal form-gender">
+             <label> 11 . Autres informations permettant de mieux comprendre l’exploitation ou l’activité proposée (joindre des feuilles supplémentaires si besoin est) : </label>
+          <div class="row">
+
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label class=" control-label" for="inputError"></label>
+                  <div class="col-sm-12">
+                    <textarea rows="5" cols="60" placeholder="Observations...">
+                    </textarea>
+                  </div>
+               </div>
+            </div>
+            </div>
+          </form>
+          </div>
+
+          <p class="small-text-name2"> <input type="checkbox" id="test3" ng-model="appl.maintenance_application"/>
+             <label for="test3"></label> Réaliser la maintenance par application d’un système équivalent (remplir les blocs 7 et 11)
+          </p>
+          <div class="section-b-third" style="display:none">
+            <label> 7.Types d’exploitation proposés par l’exploitant (Cocher autant de cases que nécessaire):</label>
+          <p class="small-text-name2"> <input type="checkbox" id="test21" />
+             <label for="test21"></label> Passagers et marchandises
+          <p class="small-text-name2"> <input type="checkbox" id="test22" />
+             <label for="test22"></label> Marchandises seulement
+          </p>
+          <p class="small-text-name2"> <input type="checkbox" id="test23" />
+             <label for="test23"></label> Vols réguliers
+          </p>
+          <p class="small-text-name2"> <input type="checkbox" id="test24" />
+             <label for="test24"></label> Vols affrétés
+          </p>
+           <form class="form-horizontal form-gender">
+             <label> 11 . Autres informations permettant de mieux comprendre l’exploitation ou l’activité proposée (joindre des feuilles supplémentaires si besoin est) : </label>
+          <div class="row">
+
+            <div class="col-md-6">
+               <div class="form-group">
+                  <label class=" control-label" for="inputError"></label>
+                  <div class="col-sm-12">
+                    <textarea rows="5" cols="60" placeholder="Observations....">
+                    </textarea>
+                  </div>
+               </div>
+            </div>
+            </div>
+          </form>
+          </div>
+          <p class="small-text-name2"> <input type="checkbox" ng-model="appl.AMO" id="test4" />
+             <label for="test4"></label> AMO (Remplir la rubrique 8)
+          </p>
+
+          <div class="section-b-fourth" style="display:none">
+          <p class="text-bold"> 8.Qualifications proposées de l’AMO:</p>
+          <div class="row">
+            <div class="col-md-3">
+              <p class="small-text-name2"> <input type="checkbox" id="test25" />
+                 <label for="test25"></label> Cellules
+              </p>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <p class="small-text-name2"> <input type="checkbox" id="test26" />
+                 <label for="test26"></label> Ordinateurs
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p class="small-text-name2"> <input type="checkbox" id="test27" />
+                 <label for="test27"></label> Moteurs
+              </p>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <p class="small-text-name2"> <input type="checkbox" id="test28" />
+                 <label for="test28"></label> Instruments
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p class="small-text-name2"> <input type="checkbox" id="test29" />
+                 <label for="test29"></label> Hélices
+              </p>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+              <p class="small-text-name2"> <input type="checkbox" id="test30" />
+                 <label for="test30"></label> Accessoires
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p class="small-text-name2"> <input type="checkbox" id="test31" />
+                 <label for="test31"></label> Avionique
+              </p>
+            </div>
+            <div class="col-md-4 col-md-offset-1">
+              <p class="small-text-name2"> <input type="checkbox" id="test32" />
+                 <label for="test32"></label> Services spécialisés
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+              <!-- UP TO HERE -->
+
+            <div class="applicant-button2">
+              <button type="button" class="btn btn-default style-button" id="button2-preview" ng-click="precedent2()">Precedent</button>
+              <button type="button" class="btn btn-default style-button" id="button2-next" ng-click="tonext2()">Suivant</button>
+            </div>
+         </section>
+         <section id="formulaire3" class="formulaire3">
+           <div class="panel-body">
+             <div class="row">
+           <p class="text-3">Section 1C. A remplir par l’exploitant postulant</p>
+           <label>9.  Données concernant les aéronefs (Fournir copie du contrat de bail pour tous les aéronefs loués)</label>
+
+           <div class="col-sm-3 nopadding">
+           <div class="form-group">
+             <input type="text" class="form-control" id="Schoolname" name="Schoolname[]" ng-model="appl.type_aeronef" value="" placeholder="Type aeronef">
+         </div>
+         </div>
+         <div class="col-sm-3 nopadding">
+           <div class="form-group">
+             <input type="text" class="form-control" id="Major" name="Major[]" value="" ng-model="appl.number_aeronef" placeholder="Type">
+           </div>
+         </div>
+         <div class="col-sm-3 nopadding">
+           <div class="form-group">
+             <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="appl.model_aeronef" placeholder="Model">
+         </div>
+         </div>
+         <div class="col-sm-3 nopadding">
+           <div class="form-group">
+             <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="appl.immat_aeronef" placeholder="Immatriculation">
+           </div>
+         </div>
+         <div class="col-sm-3 nopadding">
+           <div class="form-group">
+             <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="appl.nation_aeronef" placeholder="Nationalite">
+           </div>
+         </div>
+         <div class="col-sm-3 nopadding">
+           <div class="form-group">
+             <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="appl.passagers_aeronef" placeholder="Nombre de Passagers">
+           </div>
+         </div>
+         <div class="col-sm-4 nopadding">
+           <div class="form-group">
+             <input type="text" class="form-control" id="Degree" name="Degree[]" value="" ng-model="appl.capacite_aeronef" placeholder="Capacite charge de Marchandises">
+           </div>
+         </div>
+
+         <div class="col-sm-2 nopadding">
+           <div class="form-group">
+             <div class="input-group">
+               <div class="input-group-btn">
+                 <button class="btn btn-success btn-plus" type="button"  id="ajouter2"><i class="fa fa-plus"></i></button>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div id="education_fields2">
+
+             </div>
+         <div class="clear"></div>
+
+   </div>
+   <div class="panel-footer"><small>
+ Appuyez sur <span class="glyphicon glyphicon-plus gs"></span> pour ajouter un autre champ de formulaire :)</small>, <small>appuyez sur  <span class="glyphicon glyphicon-minus gs"></span> pour supprimer le champ de formulaire :)</small></div>
+
+   </div>
+  <form class="form-horizontal form-gender">
+   <div class="row">
+     <div class="col-md-6">
+        <div class="form-group">
+           <label class=" control-label" for="inputError"></label>
+           <div class="col-sm-12">
+             <label>10.Regions geographiques:</label>
+              <input type="text" class="form-control" id="inputError" ng-model="appl.regions" placeholder="text...">
+           </div>
+        </div>
+     </div>
+   </div>
+   <div class="section-D">
+    <p class="text-3">Section 1D : A remplir par tous les postulants</p>
+
+      <div class="row">
+      <div class="col-md-10">
+         <div class="form-group">
+            <label class=" control-label" for="inputError"></label>
+            <div class="col-sm-12">
+              <label> 12 . Formation proposée (aéronef et/ou simulateur de vol) :</label>
+               <input type="text" class="form-control" id="inputError" ng-model="appl.formation_proposee" placeholder="text...">
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</form>
+  <div class="section-E">
+   <p class="text-3">Section 1E : La communication des informations figurant le présent formulaire et sa signature dénotent l’’intention du postulant de solliciter un permis d’exploitation aérienne ou son agrément comme organisme de maintenance, selon le cas.</p>
+    <form class="form-horizontal form-gender">
+   <div class="row">
+     <div class="col-md-10">
+        <div class="form-group">
+           <label class=" control-label" for="inputError"></label>
+           <div class="col-sm-12">
+             <label>Type d’organisation:</label>
+              <input type="text" class="form-control" id="inputError" ng-model="appl.type_organisation" placeholder="text...">
+           </div>
+        </div>
+     </div>
+     </div>
+   </form>
+     <form class="form-horizontal form-gender">
+       <label>Nom, prénom(s) & titre:</label>
+       <div class="row">
+          <div class="col-md-4">
+             <div class="form-group">
+                <label class="control-label"></label>
+                <div class="col-sm-12">
+                   <input class="form-control" id="focusedInput" type="text" ng-model="appl.nom_org" placeholder="text...">
+                </div>
+             </div>
+          </div>
+          <div class="col-md-4">
+             <div class="form-group">
+                <label class=" control-label" for="inputError"></label>
+                <div class="col-sm-12">
+
+                   <input type="text" class="form-control" id="inputError" ng-model="appl.prenom_org" placeholder="text...">
+                </div>
+             </div>
+          </div>
+          <div class="col-md-4">
+             <div class="form-group">
+                <label class=" control-label" for="inputError"></label>
+                <div class="col-sm-12">
+
+                   <input type="text" class="form-control" id="inputError" ng-model="appl.titre_org" placeholder="text...">
+                </div>
+             </div>
+          </div>
+       </div>
+
+</form>
+ <form class="form-horizontal form-gender">
+   <div class="row">
+      <div class="col-md-6">
+         <div class="form-group">
+            <label class="control-label"></label>
+            <div class="col-sm-12">
+              <div class="date-naissance">
+                 <label>Date:</label>
+                 <form id="dateRangeForm" method="post" class="form-horizontal">
+                    <div class="form-group">
+                 <form class="form-horizontal">
+                 <div class="col-md-12">
+                 <input class="form-control" type="date" name="bday" ng-model="appl.date_remise" min="2000-01-02">
+                 </form>
+                 </div>
+                 </div>
+                 </form>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div>
+ </form>
+  </div>
+  <div class="applicant-button3">
+    <button type="button" class="btn btn-default style-button3" id="button3-preview" ng-click="precedent3()">Precedent</button>
+    <button type="button" class="btn btn-default style-button3" id="button3-next" ng-click="tonext3()">Suivant</button>
+  </div>
+  </section>
+         <section id="formulaire4" class="formulaire4">
+           <div class="section2">
+           <p class="text-3">Section 2 . A remplir par l’ANAC (Reception)</p>
+           <form class="form-horizontal form-gender">
+             <div class="row">
+                <div class="col-md-4">
+                   <div class="form-group">
+                      <label class="control-label"></label>
+                      <div class="col-sm-12">
+                          <label>Recu par:</label>
+                         <input class="form-control" id="focusedInput" ng-model="appl.recupar" type="email" placeholder="text...">
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-4">
+                  <form class="form-horizontal form-gender">
+                    <div class="row">
+                          <div class="form-group">
+                             <label class="control-label"></label>
+                             <div class="col-sm-12">
+                               <div class="date-naissance">
+                                  <label>Date de reception:</label>
+                                  <form id="dateRangeForm" method="post" class="form-horizontal">
+                                     <div class="form-group">
+                                  <form class="form-horizontal">
+                                  <div class="col-md-12">
+                                  <input class="form-control" type="date" name="bday" ng-model="appl.date_reception" min="2000-01-02">
+                                  </form>
+                                  </div>
+                                  </div>
+                                  </form>
+                               </div>
+                             </div>
+                          </div>
+                    </div>
+                  </form>
+                </div>
+             </div>
+           </form>
+
+           <form class="form-horizontal form-gender">
+
+                   <div class="form-group">
+                      <label class="control-label"></label>
+                      <div class="col-sm-6">
+                        <div class="date-naissance">
+                           <label>Date de transmission au DG:</label>
+                           <form id="dateRangeForm" method="post" class="form-horizontal">
+                              <div class="form-group">
+                           <form class="form-horizontal">
+                           <div class="col-md-12">
+                           <input class="form-control" type="date" name="bday" ng-model="appl.date_transmission" min="2000-01-02">
+                           </form>
+                           </div>
+                           </div>
+                           </form>
+                        </div>
+                      </div>
+                   </div>
+           </form>
+           <p class="small-text-name2"> <input type="checkbox" ng-model="appl.pour_suite" id="test015" />
+              <label for="test015"></label> Pour suite
+           </p>
+           <p class="small-text-name2"> <input type="checkbox" ng-model="appl.pour_information" id="test" />
+              <label for="test"></label> Pour information seulement
+           </p>
+           <form class="form-horizontal form-gender">
+             <div class="row">
+                <div class="col-md-4">
+                   <div class="form-group">
+                      <label class="control-label"></label>
+                      <div class="col-sm-12">
+                          <label>Observations:</label>
+                         <input class="form-control" id="focusedInput" type="email" ng-model="appl.observations" placeholder="text...">
+                      </div>
+                   </div>
+                </div>
+              </form>
+         </div>
+       </div>
+       <div class="section3">
+         <p class="text-3">Section 3 . A remplir par les services de l’ANAC</p>
+         <form class="form-horizontal form-gender">
+           <div class="row">
+              <div class="col-md-4">
+                 <div class="form-group">
+                    <label class="control-label"></label>
+                    <div class="col-sm-12">
+                        <label>Recu par:</label>
+                       <input class="form-control" id="focusedInput" ng-model="appl.recu_par2" type="text" placeholder="text...">
+                    </div>
+                 </div>
+              </div>
+              <div class="col-md-4">
+                <form class="form-horizontal form-gender">
+                        <div class="form-group">
+                           <label class="control-label"></label>
+                             <label>Date de reception:</label>
+                             <div class="date-naissance">
+                                <form id="dateRangeForm" method="post" class="form-horizontal">
+                                   <div class="form-group">
+                                <form class="form-horizontal">
+                                <div class="col-md-12">
+                                <input class="form-control" type="date" name="bday" ng-model="appl.date_reception2" min="2000-01-02">
+                                </form>
+                                </div>
+                                </div>
+                                </form>
+                             </div>
+                        </div>
+                </form>
+
+              </div>
+              <div class="col-md-4">
+                 <div class="form-group">
+                    <label class=" control-label" for="inputError"></label>
+                    <div class="col-sm-12">
+                      <label>No. d’examen preliminaire:</label>
+                       <input type="text" class="form-control" id="inputError" ng-model="appl.numero_examen" placeholder="text...">
+                    </div>
+                 </div>
+              </div>
+           </div>
+         </form>
+
+         <form class="form-horizontal form-gender">
+           <div class="row">
+              <div class="col-md-4">
+                 <div class="form-group">
+                    <label class="control-label"></label>
+                    <div class="col-sm-12">
+                        <label>Bureau local charge de designer le CPC:</label>
+                       <input class="form-control" id="focusedInput" ng-model="appl.bureau_local" type="text" placeholder="text...">
+                    </div>
+                 </div>
+              </div>
+              <div class="col-md-4">
+
+                   <div class="form-group">
+                      <label class="control-label"></label>
+                      <div class="col-sm-12">
+                          <label>Date de transmission au bureau local:</label>
+
+                         <input class="form-control" id="focusedInput" ng-model="appl.date_transmission2" type="text" placeholder="text...">
+                      </div>
+                   </div>
+
+              </div>
+
+           </div>
+         </form>
+         <form class="form-horizontal form-gender">
+           <label> Observations: </label>
+        <div class="row">
+
+          <div class="col-md-6">
+             <div class="form-group">
+                <label class=" control-label" for="inputError"></label>
+                <div class="col-sm-12">
+                  <textarea rows="5" cols="60" ng-model="appl.observations2" placeholder="Observations...">
+                  </textarea>
+                </div>
+             </div>
+          </div>
+          </div>
+        </form>
+       </div>
+            <div class="applicant-button-save">
+              <button type="button" class="btn btn-primary" id="sauvegarder" ng-click="sauvegarder()">Sauvegarder</button>
+              <button type="button" class="btn btn-danger" id="annuler">Annuler</button><br>
+              <button type="button" class="btn btn-default style-button3 btn-3" id="button6-preview" ng-click="precedent4()">Precedent</button>
+            </div>
+         </section>
+        </div>
+      <div class="col-md-6">
+         <div class="row">
+             <div class="anac-header">
+               <span class="anac2">ANAC</span>
+               <a href="#/signin"><button type="button" class="btn btn-default style-button-connect">Se Connecter</button></a>
+             </div>
+               <div class="anac-background">
+               <img class="anac-img" src="Assets/img/watermark.png">
+              </div>
+            <div id="table-display">
+               <div class="table-margin" id="table-applicant">
+                 <div class="table-container">
+                    <h4 class="title">Formulaire de demande afficher :</h4>
+                   <table class="table">
+                      <thead>
+                         <tr>
+                            <th></th>
+                            <th>No</th>
+                            <th>Question</th>
+                            <th></th>
+                            <th></th>
+                            <th>Réponse</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td>Demande de:</td>
+                           <td></td>
+                           <td></td>
+                           <td>Delivrance Initiale</td>
+                        </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Licence ATE:</td>
+                            <td></td>
+                            <td></td>
+                            <td>oui</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Noms:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.firstname +" "+ appl.lastname}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Numero Passeport :</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.passport}}</td>
+                         </tr>
+
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Date de naissance:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.birthdate}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Addresse permanente:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.address}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Taille:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.height}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Ville et etat</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.city +", "+appl.province}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Pays:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.country}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Code Postal:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.postal}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Lieu de naissance:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.birthplace}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Nationalite:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.nationality}}</td>
+                         </tr>
+
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Numero de Telephone:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.telephone}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Courriel:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.email}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Poids:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.weight}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Taille:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.height}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Gender:</td>
+                            <td></td>
+                            <td></td>
+                            <td>Male</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Hair:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.email}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Eyes:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.eyes}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Type of Licence:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.licensetype}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>License Number:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.licensenumber}}</td>
+                         </tr>
+                          <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Date de delivrance:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.issuedate}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Francais:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.french}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>English:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.english}}</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                    <button type="button" class="btn btn-success btn-succes" id="envoyer" ng-click="envoyer()">Envoyer</button>
+               </div>
+             </div>
+            </div>
+            <div class="saved" id="successfull">
+               <img src="Assets/img/success.png"class="success-img">
+               <h3 class="demande-envoyer">Votre demande à été reçue</h3>
+               <p class="demande-envoyer2">Merci d’avoir envoyer vos informations. Un message de confirmation vous<br>
+                  parviendra dans les 24 heures à suivre.<img src="Assets/img/emoji.png">
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<script>
+
+
+</script>
+<script src="Assets/js/jquery.min.js"></script>
+<script src="Assets/js/bootstrap.min.js"></script>
+<script src="Assets/js/style.js" type="text/javascript"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="Assets/js/bootstrap-multiselect.js" type="text/javascript"></script>
+<script></script>

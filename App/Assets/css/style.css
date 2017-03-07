@@ -1,3 +1,7 @@
+html,body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .anac {
     font-size: 25px;
     font-weight: bold;
@@ -16,6 +20,19 @@
 }
 .profile-name {
     margin-top: 16px;
+}
+.title{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #757575;
+}
+.title2{
+  text-align: center;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom:10px;
+  color: #757575;
 }
 .cartix-icon_ {
     float: left;
@@ -114,24 +131,38 @@ dd label input {
     color: #03a9f4;
     margin-bottom: 40px;
 }
+ .button-admin-restart{
+   height: 35px;
+   width: 125px;
+   border-radius: 19px;
+   border: 1px solid #03a9f4;
+   color: #03a9f4;
+   margin-bottom: 25px;
+ }
 .style-button-connect {
     float: right;
     margin-top: 12px;
     margin-right: 12px;
 }
-.anac-box {
+/*.anac-box {
     background-color: #fafafa;
+    height: 100%;
+    position: absolute;
     position: fixed;
+    top: 0;
     right: 0;
-    float: right;
-}
+    bottom: 0;
+}*/
+
 .anac-img {
     display: block;
     margin: 0 auto;
-    margin-top: 75px;
     margin-top: 95px;
-    margin-bottom: 100%;
+    /*margin-bottom: 100%;*/
+    width: 100%;
+    height: auto;
 }
+
 .anac-img-admin {
     display: block;
     margin: 0 auto;
@@ -142,10 +173,12 @@ dd label input {
     margin-bottom: 100%;
 }
 .saved {
-    margin-top: 50px;
+  position: fixed;
+  width: 50%;
+  display: none;
 }
-/*formmulaire2*/
 
+  /*formmulaire2*/
 .nom-complet {
     margin-top: 20px;
     font-weight: bold;
@@ -191,7 +224,7 @@ dd label input {
     display: none;
 }
 .form-gender {
-    margin-top: 15px;
+    ;
 }
 .form-gender-admin {
     margin-top: 15px;
@@ -278,6 +311,7 @@ button {
 }
 .btn-succes {
     float: right;
+    margin-bottom: 25px;
 }
 .btn span.glyphicon {
     opacity: 0;
@@ -402,8 +436,9 @@ h1 {
     border-radius: 20px;
     width: 90px;
     height: 37px;
-    margin-bottom: 50px;
 }
+
+
 .btn-pwd:hover {
     color: white;
 }
@@ -480,11 +515,13 @@ a:hover {
 /*admin*/
 
 .anac-background-admin {
-    display: none;
+
 }
 .anac-box-admin {
     background-color: #fafafa;
-    height: 100%;
+
+
+
 }
 .anac-background-admin {
     background-color: #fafafa;
@@ -549,19 +586,21 @@ a:hover {
     margin-top: 5px;
 }
 .anac-box-admin {
-    position: fixed;
+    /*position: fixed;
     right: 0;
-    float: right;
+    float: right;*/
 }
-#envoyer-admin {
-    display: none;
-}
+
 .table-applicant{
   margin: 12px;
   position: relative;
   bottom: 15px;
 }
-.table-container{
+.table-responsive{
+  display: block;
+  margin: 0 auto;
+}
+.table-margin{
   margin: 10px;
 }
 
@@ -602,4 +641,102 @@ display: none;
 }
 #date-license-f{
   display: none;
+}
+
+
+.title{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #757575;
+}
+.title2{
+  text-align: center;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom:10px;
+  color: #757575;
+}
+.style{
+  font-weight: bold;
+}
+.formulaire01{
+  display: none;
+}
+.table-display__{
+  display: none;
+}
+#envoyer-admin {
+}
+#table-display-admin2{
+  display: none;
+}
+.text-bold{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
+}
+.btn-success{
+  border: 1px solid gray;
+  border-radius: 40px;
+}
+.button-section-2{
+  position: relative;
+  top: 80px;
+  left: 5px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 12px;
+}
+.panel-footer{
+  font-size: 15px;
+}
+
+/*search*/
+p {font-size: 16px;}
+.margin2 {
+margin-top: 25px;
+float: right;
+}
+.anac-title{
+text-align: center;
+font-weight: bold;
+}
+.text-link{
+text-align: justify;
+margin-top: 40px;
+color: #9e9e9e;
+}
+.a_style{
+color: #757575;
+}
+.link_style:hover{
+color: #03a9f4;
+cursor:pointer;
+}
+.glyphicon-search{
+font-size: 18px;
+}
+
+.bg-1 {
+  background-color: #0277bd; /* Green */
+  color: #ffffff;
+}
+.bg-2 {
+background-color: #0277bd; /* Green */
+color: #ffffff;
+margin-top: 0px;
+padding-bottom: 70px;
+}
+#section2{
+display: none;
 }
