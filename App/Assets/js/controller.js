@@ -15,7 +15,7 @@ myapp.config(['$routeProvider', function($routeProvider){
         templateUrl: 'Views/applicant2.html'
     })
     .when('/admin', {
-        templateUrl: 'Views/admin-form.html'
+        templateUrl: 'Views/admin2.html'
     })
     .when('/catalog',{
       templateUrl: 'Views/search.html'
@@ -362,6 +362,16 @@ myapp.controller('adminCtrl',['$scope','$http','$location', function($scope,$htt
         $("#formulaire-admin6").hide();
         $("#formulaire-admin5").show();
       };
+
+      $scope.voir = function(){
+        $("#table-display-admin").show();
+
+      };
+
+      $("#envoyer-admin").click(function(){
+        $("#table-display-admin").hide();
+        $("#successfull-saved-admin").show();
+      });
 }]);
 
 

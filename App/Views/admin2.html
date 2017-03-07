@@ -1,0 +1,612 @@
+<div class="container-fluid" ng-controller="adminCtrl">
+   <div class="row">
+      <div class="col-md-6">
+        <section id="formulaire-admin0" class="formulaire0">
+           <p class="text-1-table">Liste de demande</p>
+           <div class="table-responsive">
+              <table class="table">
+                 <thead>
+                    <tr>
+                       <th>Nom</th>
+                       <th></th>
+                       <th>Email</th>
+                       <th>Telephone</th>
+                       <th></th>
+                       <th></th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    <tr class="active">
+                       <td>AGBASSE Charlie</td>
+                       <td></td>
+                       <td>test@anac.bj</td>
+                       <td>+229 9547</td>
+                       <td></td>
+                       <td id="Voir-data1" ng-click="voir()"><a href="">Voir</a></td>
+                    </tr>
+                    <tr>
+                       <td>Luc Tuyishime</td>
+                       <td></td>
+                       <td>luc@test.db</td>
+                       <td>+2505</td>
+                       <td></td>
+                       <td id="Voir-data2" ng-click="voir()"><a href="">Voir</a></td>
+                    </tr>
+                    <tr class="active">
+                       <td>Dieume Hirwa</td>
+                       <td></td>
+                       <td>hirwa@anac.bj</td>
+                       <td>+229555</td>
+                       <td></td>
+                       <td id="Voir-data3" ng-click="voir()"><a href="">Voir</a></td>
+                    </tr>
+                    <tr>
+                       <td>Rmey Muhire</td>
+                       <td></td>
+                       <td>remy@remy.rw</td>
+                       <td>+25005</td>
+                       <td></td>
+                       <td id="Voir-data4" ng-click="voir()"><a href="">Voir</a></td>
+                    </tr>
+                    <tr class="active">
+                       <td>Peace Rwaka...</td>
+                       <td></td>
+                       <td>peace@anac.db</td>
+                       <td>+229 558</td>
+                       <td></td>
+                       <td id="Voir-data5" ng-click="voir()"><a href="">Voir</a></td>
+                    </tr>
+                    <tr>
+                       <td>Steve Shema</td>
+                       <td></td>
+                       <td>stve@rme.gj</td>
+                       <td>+2507855</td>
+                       <td></td>
+                       <td id="Voir-data6" ng-click="voir()"><a href="">Voir</a></td>
+                    </tr>
+                    <tr class="active">
+                       <td>Anac</td>
+                       <td></td>
+                       <td>anac@ssj</td>
+                       <td>+229 47</td>
+                       <td></td>
+                       <td id="Voir-data7" ng-click="voir()"><a href="">Voir</a></td>
+                    </tr>
+                    <tr>
+                       <td>CAA</td>
+                       <td></td>
+                       <td>caa@dd.cp</td>
+                       <td>+258745</td>
+                       <td></td>
+                       <td id="Voir-data8" ng-click="voir()"><a href="">Voir</a></td>
+                    </tr>
+                    <tr class="active">
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td>Table Cell</td>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td id="Voir-data9"><a href="">Voir</a></td>
+                    </tr>
+                    <tr>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td>Table Cell</td>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td id="Voir-data10"><a href="">Voir</a></td>
+                    </tr>
+                    <tr class="active">
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td>Table Cell</td>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td id="Voir-data11"><a href="">Voir</a></td>
+                    </tr>
+                    <tr>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td>Table Cell</td>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td id="Voir-data12"><a href="">Voir</a></td>
+                    </tr>
+                    <tr class="active">
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td>Table Cell</td>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td id="Voir-data13"><a href="">Voir</a></td>
+                    </tr>
+                    <tr>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td>Table Cell</td>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td id="Voir-data14"><a href="">Voir</a></td>
+                    </tr>
+                    <tr class="active">
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td>Table Cell</td>
+                       <td>Table Cell</td>
+                       <td></td>
+                       <td id="Voir-data15"><a href="">Voir</a></td>
+                    </tr>
+                 </tbody>
+              </table>
+           </div>
+        </section>
+
+      </div>
+      <div class="col-md-6 anac-box-admin">
+         <div class="row">
+            <div class="anac-background-admin">
+
+               <img class="anac-img-admin" src="Assets/img/watermark.png">
+            </div>
+         </div>
+
+            <div class="row">
+               <div class="col-sm-4">
+                  <span class="anac">ANAC</span>
+               </div>
+               <div class="col-sm-4 profile-name">
+                  <img class="" src="Assets/img/user.svg"><span class="profile-name"> AGBASSE Charlie</span>
+               </div>
+               <div class="col-sm-4">
+                  <a href="sign-in.html"><button type="button" class="btn btn-default style-button-connect">Deconnection</button></a>
+               </div>
+            </div>
+            <div id="table-display-admin" style="display:None">
+            <div class="table-responsive table-display_" id="data-dispay-admin_">
+              <table class="table">
+                      <thead>
+                         <tr>
+                            <th></th>
+                            <th>No</th>
+                            <th>Question</th>
+                            <th></th>
+                            <th></th>
+                            <th>Réponse</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                           <td></td>
+                           <td></td>
+                           <td>Raison Social:</td>
+                           <td></td>
+                           <td></td>
+                           <td>{{appl.raison_social}}</td>
+                        </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Addresse social:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.addresse_sociale}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Numero du telephone:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.adres_telephone}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>addresse electronique:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.email}}</td>
+                         </tr>
+
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Autre appelation:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.autre_appelation}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Addresse Administratif:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.address_admin}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Etablissements secondaires:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.etabl_secondaire}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Type d'exploitation</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.type_exploit}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Date de Commencement:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.date_commencement}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Indicatif demandé pour l’exploitant, dans l’ordre de préférence-1:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.indicatif1}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Indicatif demandé pour l’exploitant, dans l’ordre de préférence-2:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.indicatif2}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Indicatif demandé pour l’exploitant, dans l’ordre de préférence-3:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.indicatif3}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <th>Personnel de Direction et principaux cadres y compris le Dirigeant Responsable:</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                         </tr>
+
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Noms:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.names}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Titre:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.titre}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Telephone:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.telephone}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Telecopieur:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.telecopieur}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Adresse Electronique:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.email_person}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>L’exploitant a l’intention de réaliser sa maintenance en qualité d’AMO (remplir les rubriques 7 et 8):</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.realiser_maintenance}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td> L’exploitant a l’intention de sous-traiter la maintenance et les inspections des aéronefs et du matériel connexe (remplir les rubriques 7 et 11):</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.soustraiter_maintenace}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td> L’exploitant a l’intention de réaliser la maintenance par application d’un système équivalent (remplir les blocs 7 et 11):</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.maintenance_application}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>AMO (Remplir la rubrique 8):</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.AMO}}</td>
+                         </tr>
+                          <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <th>Données concernant les aéronefs (Fournir copie du contrat de bail pour tous les aéronefs loués):</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Aeronef:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.type_aeronef}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Type:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.number_aeronef}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Model:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.model_aeronef}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Immatriculation:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.immat_aeronef}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Nationalite:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.passagers_aeronef}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Nombre de Passagers:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.capacite_aeronef}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Capacite charge de marchandises:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.capacite_aeronef}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Regions geographiques:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.regions}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Formation proposée (aéronef et/ou simulateur de vol):</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.formation_proposee}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Type d’organisation:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.type_organisation}}</td>
+                         </tr>
+
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Nom:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.nom_org}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>prénom(s):</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.prenom_org}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>titre:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.titre_org}}</td>
+                         </tr>
+
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Date:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.date_remise}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Recu par:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.recupar}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Date de reception:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.date_reception}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Date de transmission au DG:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.date_transmission}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Pour suite:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.pour_suite}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Pour information seulement:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.pour_information}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Observations:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.observations}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Recu par:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.recu_par2}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td> Date de reception:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.date_reception2}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Numero d’examen preliminaire:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.numero_examen}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Bureau local charge de designer le CPC:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.bureau_local}}</td>
+                         </tr>
+                         <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Date de transmission au bureau local:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.date_transmission2}}</td>
+                         </tr>
+                         <tr class="active">
+                            <td></td>
+                            <td></td>
+                            <td>Observations:</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{appl.observations2}}</td>
+                         </tr>
+                      </tbody>
+
+                   </table>
+                   <div class="well well-sm text-center">
+                             <div class="btn-group" data-toggle="buttons">
+                                 <label class="btn btn-info">Applicable
+                                     <input type="radio" name="options" ng-model="status" value="Applicable" id="option1" autocomplete="off">
+                                     <span class="glyphicon glyphicon-ok"></span>
+                                 </label>
+                                 <label class="btn btn-danger">Non Applicable
+                                     <input type="radio" name="options" ng-model="status" value="Non-Applicable" id="option2" autocomplete="off">
+                                     <span class="glyphicon glyphicon-ok"></span>
+                                 </label>
+                                 <label class="btn btn-primary">Achevée
+                                     <input type="radio" name="options" ng-model="status" value="Achevee" id="option3" autocomplete="off">
+                                     <span class="glyphicon glyphicon-ok"></span>
+                                 </label>
+                             </div>
+                    </div>
+                 <button type="button" class="btn btn-success btn-succes" id="envoyer-admin">Proceder</button>
+                </div>
+              </div>
+            <div class="saved" id="successfull-saved-admin">
+               <img src="Assets/img/success.png"class="success-img">
+               <h3 class="demande-envoyer">Votre demande à été reçue</h3>
+               <p class="demande-envoyer2">Merci d’avoir envoyer vos informations. Un message de confirmation vous<br>
+                  parviendra dans les 24 heures à suivre.<img src="Assets/img/emoji.png">
+               </p>
+            </div>
+      </div>
+   </div>
+</div>
+<script type="text/javascript">
+   $(function () {
+       $('#duration').durationPicker();
+       $('#duration2').durationPicker({ showSeconds: true, checkRanges: true, totalMax: 259200000 /* 3 days */ });
+   });
+
+</script>

@@ -642,11 +642,26 @@ Appuyez sur <span class="glyphicon glyphicon-plus gs"></span> pour ajouter un au
                       </div>
                    </div>
            </form>
-           <p class="small-text-name2"> <input type="checkbox" ng-model="appl.pour_suite" id="test015" />
-              <label for="test015"></label> Pour suite
-           </p>
-           <p class="small-text-name2"> <input type="checkbox" ng-model="appl.pour_information" id="test" />
-              <label for="test"></label> Pour information seulement
+           <div class="well well-sm text-center">
+                     <div class="btn-group" data-toggle="buttons">
+                       <form>
+                         <label class="btn btn-info">Pour Information
+                             <input type="radio" name="options" ng-model="appl.pour_raison" value="pour_information" id="option01" autocomplete="off">
+                             <span class="glyphicon glyphicon-ok"></span>
+                         </label>
+                         <label class="btn btn-primary">Pour Suite
+                             <input type="radio" name="options" ng-model="appl.pour_raison" value="pour_suite" id="option02" autocomplete="off">
+                             <span class="glyphicon glyphicon-ok"></span>
+                         </label>
+                       </form>
+                     </div>
+            </div>
+            <!-- <form>
+              Raison de transmission au DG:
+              <input type="radio" ng-model="appl.pour_raison" value="pour_suite">Pour suite
+              <input type="radio" ng-model="appl.pour_raison" value="pour_information">Pour information
+            </form> -->
+
            </p>
            <form class="form-horizontal form-gender">
              <div class="row">
@@ -724,8 +739,16 @@ Appuyez sur <span class="glyphicon glyphicon-plus gs"></span> pour ajouter un au
                       <label class="control-label"></label>
                       <div class="col-sm-12">
                           <label>Date de transmission au bureau local:</label>
+                          <form id="dateRangeForm" method="post" class="form-horizontal">
+                             <div class="form-group">
+                          <form class="form-horizontal">
+                          <div class="col-md-12">
+                          <input class="form-control" type="date" name="bday" ng-model="appl.date_transmission2" min="2000-01-02">
+                          </form>
+                          </div>
+                          </div>
+                          </form>
 
-                         <input class="form-control" id="focusedInput" ng-model="appl.date_transmission2" type="text" placeholder="text...">
                       </div>
                    </div>
 
@@ -769,214 +792,408 @@ Appuyez sur <span class="glyphicon glyphicon-plus gs"></span> pour ajouter un au
                <div class="table-margin" id="table-applicant">
                  <div class="table-container">
                     <h4 class="title">Formulaire de demande afficher :</h4>
-                   <table class="table">
-                      <thead>
-                         <tr>
-                            <th></th>
-                            <th>No</th>
-                            <th>Question</th>
-                            <th></th>
-                            <th></th>
-                            <th>Réponse</th>
-                         </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td>Demande de:</td>
-                           <td></td>
-                           <td></td>
-                           <td>Delivrance Initiale</td>
-                        </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Licence ATE:</td>
-                            <td></td>
-                            <td></td>
-                            <td>oui</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Noms:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.firstname +" "+ appl.lastname}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Numero Passeport :</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.passport}}</td>
-                         </tr>
+                    <table class="table">
+                            <thead>
+                               <tr>
+                                  <th></th>
+                                  <th>No</th>
+                                  <th>Question</th>
+                                  <th></th>
+                                  <th></th>
+                                  <th>Réponse</th>
+                               </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                 <td></td>
+                                 <td></td>
+                                 <td>Raison Social:</td>
+                                 <td></td>
+                                 <td></td>
+                                 <td>{{appl.raison_social}}</td>
+                              </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Addresse social:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.addresse_sociale}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Numero du telephone:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.adres_telephone}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>addresse electronique:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.email}}</td>
+                               </tr>
 
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Date de naissance:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.birthdate}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Addresse permanente:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.address}}</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Taille:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.height}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Ville et etat</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.city +", "+appl.province}}</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Pays:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.country}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Code Postal:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.postal}}</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Lieu de naissance:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.birthplace}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Nationalite:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.nationality}}</td>
-                         </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Autre appelation:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.autre_appelation}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Addresse Administratif:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.address_admin}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Etablissements secondaires:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.etabl_secondaire}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Type d'exploitation</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.type_exploit}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Date de Commencement:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.date_commencement}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Indicatif demandé pour l’exploitant, dans l’ordre de préférence-1:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.indicatif1}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Indicatif demandé pour l’exploitant, dans l’ordre de préférence-2:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.indicatif2}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Indicatif demandé pour l’exploitant, dans l’ordre de préférence-3:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.indicatif3}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <th>Personnel de Direction et principaux cadres y compris le Dirigeant Responsable:</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                               </tr>
 
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Numero de Telephone:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.telephone}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Courriel:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.email}}</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Poids:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.weight}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Taille:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.height}}</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Gender:</td>
-                            <td></td>
-                            <td></td>
-                            <td>Male</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Hair:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.email}}</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Eyes:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.eyes}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Type of Licence:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.licensetype}}</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>License Number:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.licensenumber}}</td>
-                         </tr>
-                          <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>Date de delivrance:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.issuedate}}</td>
-                         </tr>
-                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td>Francais:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.french}}</td>
-                         </tr>
-                         <tr class="active">
-                            <td></td>
-                            <td></td>
-                            <td>English:</td>
-                            <td></td>
-                            <td></td>
-                            <td>{{appl.english}}</td>
-                         </tr>
-                      </tbody>
-                   </table>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Noms:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.names}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Titre:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.titre}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Telephone:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.telephone}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Telecopieur:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.telecopieur}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Adresse Electronique:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.email_person}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>L’exploitant a l’intention de réaliser sa maintenance en qualité d’AMO (remplir les rubriques 7 et 8):</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.realiser_maintenance}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td> L’exploitant a l’intention de sous-traiter la maintenance et les inspections des aéronefs et du matériel connexe (remplir les rubriques 7 et 11):</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.soustraiter_maintenace}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td> L’exploitant a l’intention de réaliser la maintenance par application d’un système équivalent (remplir les blocs 7 et 11):</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.maintenance_application}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>AMO (Remplir la rubrique 8):</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.AMO}}</td>
+                               </tr>
+                                <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <th>Données concernant les aéronefs (Fournir copie du contrat de bail pour tous les aéronefs loués):</th>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Aeronef:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.type_aeronef}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Type:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.number_aeronef}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Model:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.model_aeronef}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Immatriculation:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.immat_aeronef}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Nationalite:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.passagers_aeronef}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Nombre de Passagers:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.capacite_aeronef}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Capacite charge de marchandises:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.capacite_aeronef}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Regions geographiques:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.regions}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Formation proposée (aéronef et/ou simulateur de vol):</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.formation_proposee}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Type d’organisation:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.type_organisation}}</td>
+                               </tr>
+
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Nom:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.nom_org}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>prénom(s):</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.prenom_org}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>titre:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.titre_org}}</td>
+                               </tr>
+
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Date:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.date_remise}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Recu par:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.recupar}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Date de reception:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.date_reception}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Date de transmission au DG:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.date_transmission}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Raion de transmission au DG:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.pour_raison}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Observations:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.observations}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Recu par:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.recu_par2}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td> Date de reception:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.date_reception2}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Numero d’examen preliminaire:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.numero_examen}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Bureau local charge de designer le CPC:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.bureau_local}}</td>
+                               </tr>
+                               <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td>Date de transmission au bureau local:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.date_transmission2}}</td>
+                               </tr>
+                               <tr class="active">
+                                  <td></td>
+                                  <td></td>
+                                  <td>Observations:</td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>{{appl.observations2}}</td>
+                               </tr>
+                            </tbody>
+                         </table>
                     <button type="button" class="btn btn-success btn-succes" id="envoyer" ng-click="envoyer()">Envoyer</button>
                </div>
              </div>
